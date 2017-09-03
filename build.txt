@@ -1,0 +1,7 @@
+author = Iggysaur
+version = 0.1
+displayName = Sierra Mod
+homepage = 
+hideCode = true
+hideResources = true
+includeSource = true

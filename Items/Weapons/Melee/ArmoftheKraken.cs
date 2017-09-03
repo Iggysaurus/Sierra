@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LegendMod.Items
+namespace Sierra.Items.Weapons.Melee
 {
     public class ArmoftheKraken : ModItem
     {

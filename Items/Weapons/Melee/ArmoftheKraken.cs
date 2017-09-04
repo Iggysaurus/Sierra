@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace LegendMod.Items
+namespace Sierra.Items.Weapons.Melee
 {
     public class ArmoftheKraken : ModItem
     {
@@ -13,7 +13,7 @@ namespace LegendMod.Items
         }
         public override void SetDefaults()
         {
-            item.damage = 125;
+            item.damage = 41;
             item.melee = true;
             item.width = 90;
             item.height = 90;
@@ -24,7 +24,7 @@ namespace LegendMod.Items
             item.value = 24000;
             item.rare = 8;
             item.UseSound = SoundID.NPCDeath1;
-            item.autoReuse = true;
+            item.autoReuse = false;
         }
         public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {

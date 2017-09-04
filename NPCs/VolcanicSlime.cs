@@ -76,15 +76,13 @@ namespace Sierra.NPCs
             }
         }
 		
-		/*public override float SpawnChance(NPCSpawnInfo spawnInfo)
-		{
-			int x = spawnInfo.spawnTileX;
-			int y = spawnInfo.spawnTileY;
-			int tile = Main.tile[x, y].type;
-			return spawnInfo.player.ZoneDesert ? 0.80f : 0;
-		}
+		public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+			Player player = spawnInfo.player;
+			return spawnInfo.player.GetModPlayer<MyPlayer>(mod).ZoneVolcano ? 6f : 0f;
+        }
 		
-		public override void NPCLoot()
+		/*public override void NPCLoot()
 		{
 			if (Main.netMode != 1)
 			{

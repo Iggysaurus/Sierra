@@ -32,7 +32,17 @@ namespace Sierra.Items.Weapons.Ranged
 			item.useAmmo = AmmoID.Arrow;
 		}
 
-        public override bool ConsumeAmmo(Player player)
+        public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(null, "TarBall", 10);
+			recipe.AddIngredient(null, "SturdyBone", 3);
+            recipe.AddTile(TileID.Anvils);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+		
+		public override bool ConsumeAmmo(Player player)
 		{
 			return Main.rand.NextFloat() >= .5f;
 		}

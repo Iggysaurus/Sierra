@@ -31,7 +31,7 @@ namespace Sierra.Items.Weapons.Melee
 		{
 			if (Main.rand.Next(3) == 0)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 6);
+				int dust = Dust.NewDust(player.position, player.width,player.height, 6);
 			}
 		}
 

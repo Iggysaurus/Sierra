@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
+using Microsoft.Xna.Framework;
 namespace Sierra.Items.Weapons.Melee
 {
     public class TarSlicer : ModItem
@@ -41,7 +41,7 @@ namespace Sierra.Items.Weapons.Melee
 		{
 			if (Main.rand.Next(3) == 0)
 			{
-				int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 62);
+				int dust = Dust.NewDust(player.position, player.width,player.height, 62);
 			}
 		}
 

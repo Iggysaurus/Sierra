@@ -43,7 +43,24 @@ namespace Sierra.NPCs
 			int tile = Main.tile[x, y].type;
 			return spawnInfo.player.ZoneDesert ? 0.80f : 0;
 		}
-		
+		public override void HitEffect(int hitDirection, double damage)
+        {
+            if (npc.life <= 0)
+            {
+              				Vector2 direction = Main.player[npc.target].Center - npc.Center;
+				direction.Normalize();
+				direction.X *= 14f;
+				direction.Y *= 14f;
+				
+				int amountOfProjectiles = Main.rand.Next(2, 3);
+				for (int i = 0; i < amountOfProjectiles; ++i)
+				{
+						float A = (float)Main.rand.Next(-150, 150) * 0.01f;
+						float B = (float)Main.rand.Next(-150, 150) * 0.01f;
+						Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X + A, direction.Y + B, mod.ProjectileType("TarBallProj"), 8, 1, Main.myPlayer, 0, 0);
+				}
+   		    }
+        }
 		public override void NPCLoot()
 		{
 			if (Main.netMode != 1)

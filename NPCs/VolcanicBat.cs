@@ -25,8 +25,8 @@ namespace Sierra.NPCs
         }
         public override void SetDefaults()
         {
-            npc.width = 26;
-            npc.height = 18;
+            npc.width = 54;
+            npc.height = 48;
             npc.damage = 26;
             npc.defense = 10;
             npc.lifeMax = 87;
@@ -42,7 +42,7 @@ namespace Sierra.NPCs
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
 			Player player = spawnInfo.player;
-			return spawnInfo.player.GetModPlayer<MyPlayer>(mod).ZoneVolcano ? 6f : 0f;
+			return spawnInfo.player.GetModPlayer<MyPlayer>(mod).ZoneVolcano ? 4f : 0f;
         }
 
        public override void OnHitPlayer(Player target, int damage, bool crit)

@@ -9,7 +9,7 @@ namespace Sierra.Items.Weapons.Melee
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDafault("Tar Pike");
+            DisplayName.SetDefault("Tar Pike");
             Tooltip.SetDefault("stabby stabby iggy");
         }
 
@@ -26,7 +26,7 @@ namespace Sierra.Items.Weapons.Melee
             item.scale = 1f;
             item.rare = 3;
             item.UseSound = SoundID.Item1;
-            item.shoot = mod.ProjectileType<TarPikeProjectile>();
+            item.shoot = mod.ProjectileType("TarPikeProjectile");
             item.value = 1000;
             item.noMelee = true; 
             item.noUseGraphic = true; 

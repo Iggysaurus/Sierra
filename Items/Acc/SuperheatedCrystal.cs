@@ -1,20 +1,18 @@
-using System;
-using System.Collections.Generic;
-
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
-using Sierra;
 using Terraria.ModLoader;
 
 namespace Sierra.Items.Acc
 {
-    public class HotAf : ModItem
+    public class SuperheatedCrystal : ModItem
     {
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Superheated Crystal");
 			Tooltip.SetDefault("Damage taken reflects back into an explosion");
+			Main.RegisterItemAnimation(item.type, new DrawAnimationVertical(6, 6));
 		}
         public override void SetDefaults()
         {

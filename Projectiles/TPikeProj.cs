@@ -13,16 +13,16 @@ namespace Sierra.Projectiles
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tar Spear");
+            DisplayName.SetDefault("Tar Pike");
         }
 
         public override void SetDefaults()
         {
-            projectile.width = 18;
-            projectile.height = 18;
+            projectile.width = 64;
+            projectile.height = 64;
             projectile.aiStyle = 19;
             projectile.friendly = true;
-            projectile.penetrate = -0.5;
+            projectile.penetrate = -1;
             projectile.tileCollide = false;
             projectile.scale = 1.3f;
             projectile.hide = true;
@@ -73,13 +73,13 @@ namespace Sierra.Projectiles
 
             if (Main.rand.Next(3) == 0)
             {
-                int dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, mod.DustType<Dusts.Sparkle>(), projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 200, default(Color), 1.2f);
+                int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, 62);
                 Main.dust[dustIndex].velocity += projectile.velocity * 0.3f;
                 Main.dust[dustIndex].velocity *= 0.2f;
             }
             if (Main.rand.Next(4) == 0)
             {
-                int dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, mod.DustType<Dusts.Smoke>(), 0f, 0f, 254, default(Color), 0.3f);
+                int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, 62);
                 Main.dust[dustIndex].velocity += projectile.velocity * 0.5f;
                 Main.dust[dustIndex].velocity *= 0.5f;
                 return;

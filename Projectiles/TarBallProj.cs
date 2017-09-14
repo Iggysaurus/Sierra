@@ -18,8 +18,7 @@ namespace Sierra.Projectiles
         }
         public override void SetDefaults()
         {
-			            projectile.CloneDefaults(ProjectileID.SpikyBall);
-            projectile.hostile = hostile;
+			projectile.CloneDefaults(ProjectileID.SpikyBall);
             projectile.hostile = true;
             projectile.width = 14;
             projectile.height = 14;

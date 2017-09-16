@@ -33,7 +33,7 @@ namespace Sierra.Projectiles
         }
         public override void AI()
         {
-            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 66);
+            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 91);
             Main.dust[dust].velocity /= 10f;  //this modify the velocity of the first dust
             Main.dust[dust].scale = 1f;  //this modify the scale of the first dust
 			Main.dust[dust].noGravity = true;
@@ -49,7 +49,7 @@ namespace Sierra.Projectiles
             Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
             for (int k = 0; k < 5; k++)
             {
-            	Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 66, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+            	Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 91, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
             }
 		}
     }

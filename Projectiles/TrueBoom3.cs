@@ -34,7 +34,7 @@ namespace Sierra.Projectiles
             }
 			for (int i = 0; i < 2; i++)
 			{
-				int DustID2 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 66, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+				int DustID2 = Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 91, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
 				Main.dust[DustID2].noGravity = true;
 			}
         }

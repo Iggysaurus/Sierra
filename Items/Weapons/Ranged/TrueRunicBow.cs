@@ -56,7 +56,7 @@ namespace Sierra.Items.Weapons.Ranged
 			{
 				type = mod.ProjectileType("TrueArrow2");
 			}
-			else if (shootType == 2)
+			else if (shootType == 3)
 			{
 				type = mod.ProjectileType("TrueArrow3");
 			}

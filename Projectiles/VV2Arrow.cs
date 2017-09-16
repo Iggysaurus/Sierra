@@ -20,7 +20,7 @@ namespace Sierra.Projectiles
             projectile.aiStyle = 1; 
             projectile.friendly = true; 
             projectile.tileCollide = true; 
-            projectile.magic = true;   
+            projectile.ranged = true;   
             projectile.timeLeft = 1000;
             projectile.light = 0.20f; 
 			projectile.extraUpdates = 0;

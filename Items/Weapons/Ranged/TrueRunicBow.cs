@@ -7,11 +7,12 @@ namespace Sierra.Items.Weapons.Ranged
 {
 	public class TrueRunicBow : ModItem
 	{
+		int shootType = 0;
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Shoots a volley of explosive arrows");
 		}
-
+	
 		public override void SetDefaults()
 		{
 			item.damage = 54;
@@ -42,9 +43,18 @@ namespace Sierra.Items.Weapons.Ranged
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			if (type == ProjectileID.WoodenArrowFriendly) 
+			shootType++;
+			if (shootType > 2)
+			{
+				shootType = 1;
+			}
+			if (shootType == 1)
 			{
 				type = mod.ProjectileType("TrueArrow1");
+			}
+			else if (shootType == 2)
+			{
+				type = mod.ProjectileType("TrueArrow2");
 			}
 		   return true;
 		}

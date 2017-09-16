@@ -44,7 +44,7 @@ namespace Sierra.Items.Weapons.Ranged
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
 			shootType++;
-			if (shootType > 2)
+			if (shootType > 3)
 			{
 				shootType = 1;
 			}
@@ -55,6 +55,10 @@ namespace Sierra.Items.Weapons.Ranged
 			else if (shootType == 2)
 			{
 				type = mod.ProjectileType("TrueArrow2");
+			}
+			else if (shootType == 2)
+			{
+				type = mod.ProjectileType("TrueArrow3");
 			}
 		   return true;
 		}

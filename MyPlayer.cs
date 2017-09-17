@@ -13,6 +13,7 @@ namespace Sierra
 {
     public class MyPlayer : ModPlayer
     {
+		public bool FireWarrior = false;
 		public bool ZoneVolcano;
 		public bool boom = false;
         public override void ResetEffects()
@@ -49,6 +50,14 @@ namespace Sierra
 					if (player.Distance(Main.npc[i].Center) < 100)
 						Main.npc[i].StrikeNPC(50, 0f, 0, false, false, false);
 				}
+			}
+		}
+		public override void PreUpdateBuffs()
+        {
+            if (FireWarrior)
+            {
+                player.statDefense += 1;
+				player.meleeCrit += 2;
 			}
 		}
     }

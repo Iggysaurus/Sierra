@@ -7,11 +7,11 @@ using Terraria.ModLoader;
 
 namespace Sierra.Projectiles
 {
-    public class VV2Arrow : ModProjectile 
+    public class TrueArrow1 : ModProjectile 
     {
 		public override void SetStaticDefaults() 
         {
-            DisplayName.SetDefault("Explosive Magma Arrow");
+            DisplayName.SetDefault("True Arrow");
         }
         public override void SetDefaults()
         {
@@ -20,7 +20,7 @@ namespace Sierra.Projectiles
             projectile.aiStyle = 1; 
             projectile.friendly = true; 
             projectile.tileCollide = true; 
-            projectile.ranged = true;   
+           projectile.ranged = true;    
             projectile.timeLeft = 1000;
             projectile.light = 0.20f; 
 			projectile.extraUpdates = 0;
@@ -33,7 +33,7 @@ namespace Sierra.Projectiles
         }
         public override void AI()
         {
-            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 6);
+            int dust = Dust.NewDust(projectile.position, projectile.width, projectile.height, 58);
             Main.dust[dust].velocity /= 10f;  //this modify the velocity of the first dust
             Main.dust[dust].scale = 1f;  //this modify the scale of the first dust
 			Main.dust[dust].noGravity = true;
@@ -45,11 +45,11 @@ namespace Sierra.Projectiles
         }
 		public override void Kill(int timeLeft)
         {
-			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("VV2Explosion"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
+			Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, 0f, 0f, mod.ProjectileType("TrueBoom1"), projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
             Main.PlaySound(2, (int)projectile.position.X, (int)projectile.position.Y, 10);
             for (int k = 0; k < 5; k++)
             {
-            	Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 6, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
+            	Dust.NewDust(projectile.position + projectile.velocity, projectile.width, projectile.height, 58, projectile.velocity.X * 0.5f, projectile.velocity.Y * 0.5f);
             }
 		}
     }

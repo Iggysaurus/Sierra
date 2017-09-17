@@ -17,8 +17,8 @@ namespace Sierra.Items.Weapons.Melee
             item.melee = true;
             item.width = 36;
             item.height = 40;
-            item.useTime = 4;
-            item.useAnimation = 4;
+            item.useTime = 9;
+            item.useAnimation = 9;
             item.useStyle = 1;
             item.knockBack = 3;
             item.value = 20000;

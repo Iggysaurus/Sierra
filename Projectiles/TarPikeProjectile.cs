@@ -9,17 +9,19 @@ using Terraria.ModLoader;
 
 namespace Sierra.Projectiles
 {
-    public class TPikeProj : ModProjectile
+    public class TarPikeProjectile : ModProjectile
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tar Pike");
+            DisplayName.SetDefault("Tar Spear");
         }
 
         public override void SetDefaults()
         {
             projectile.width = 64;
             projectile.height = 64;
+            projectile.width = 18;
+            projectile.height = 18;
             projectile.aiStyle = 19;
             projectile.friendly = true;
             projectile.penetrate = -1;
@@ -73,13 +75,13 @@ namespace Sierra.Projectiles
 
             if (Main.rand.Next(3) == 0)
             {
-                int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, 62);
+                int dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 2, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 200, default(Color), 1.2f);
                 Main.dust[dustIndex].velocity += projectile.velocity * 0.3f;
                 Main.dust[dustIndex].velocity *= 0.2f;
             }
             if (Main.rand.Next(4) == 0)
             {
-                int dustIndex = Dust.NewDust(projectile.position, projectile.width, projectile.height, 62);
+                int dustIndex = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), projectile.width, projectile.height, 2, 0f, 0f, 254, default(Color), 0.3f);
                 Main.dust[dustIndex].velocity += projectile.velocity * 0.5f;
                 Main.dust[dustIndex].velocity *= 0.5f;
                 return;

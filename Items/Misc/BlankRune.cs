@@ -24,7 +24,7 @@ namespace Sierra.Items.Misc
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.StoneBlock, 30);
-            recipe.AddIngredient(ItemID.FallenStar, 1);
+            recipe.AddIngredient(ItemID.FallenStar, 5);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();

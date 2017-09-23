@@ -13,7 +13,7 @@ namespace Sierra.Items.Weapons.Melee
         }
         public override void SetDefaults()
         {
-            item.damage = 40;
+            item.damage = 42;
             item.melee = true;
             item.width = 36;
             item.height = 40;

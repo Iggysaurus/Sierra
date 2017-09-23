@@ -16,8 +16,8 @@ namespace Sierra.Projectiles
 		}
         public override void SetDefaults()
         {  //projectile name
-            projectile.width = 20;       //projectile width
-            projectile.height = 28;  //projectile height
+            projectile.width = 26;       //projectile width
+            projectile.height = 60;  //projectile height
             projectile.friendly = true;      //make that the projectile will not damage you
             projectile.melee = true;         // 
             projectile.tileCollide = true;   //make that the projectile will be destroed if it hits the terrain

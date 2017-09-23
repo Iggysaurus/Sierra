@@ -20,6 +20,11 @@ namespace Sierra.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SlimeLauncher"), 1);
 			}
+			
+			if (npc.type == 327 && Main.rand.Next(1) == 0)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PumpkinStabber"), 1);
+			}
 
         }
 	}

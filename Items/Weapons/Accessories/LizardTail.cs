@@ -21,7 +21,6 @@ namespace Sierra.Items.Weapons.Accessories
 			item.rare = 4;
 			item.defense = 1;
 			item.accessory = true;
-			item.expert = true;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual)

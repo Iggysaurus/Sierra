@@ -67,6 +67,14 @@ namespace Sierra
 		{
 			return NormalSpawn(spawnInfo) && NoBiome(spawnInfo) && NoZone(spawnInfo);
 		}
+		
+		public override void UpdateMusic(ref int music)
+		{
+			if (Main.player[Main.myPlayer].active && Main.player[Main.myPlayer].GetModPlayer<MyPlayer>(this).ZoneVolcano && !Main.gameMenu)
+            {
+                music = this.GetSoundSlot(SoundType.Music, "Sounds/Music/Track2");
+            }
+        }
 	
 	}
 }

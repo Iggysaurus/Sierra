@@ -25,6 +25,11 @@ namespace Sierra.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PumpkinStabber"), 1);
 			}
+			if (npc.type == 50 || npc.type == 4 || npc.type == 266)
+			{
+				if (Main.rand.Next(100) == 1)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("PossessiveOrb"), 1);
+			}
 
         }
 	}

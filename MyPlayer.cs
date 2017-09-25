@@ -13,6 +13,7 @@ namespace Sierra
 {
     public class MyPlayer : ModPlayer
     {
+		public bool PossessiveOne = false;
 		public bool FireWarrior = false;
 		public bool ZoneVolcano;
 		public bool boom = false;
@@ -58,6 +59,10 @@ namespace Sierra
             {
                 player.statDefense += 1;
 				player.meleeCrit += 2;
+			}
+			if (PossessiveOne)
+            {
+                player.statLifeMax2 += 40;
 			}
 		}
     }

@@ -18,8 +18,8 @@ namespace Sierra.Items.Weapons.Melee //where is located
         {    //Sword name
             item.damage = 122;            //Sword damage
             item.melee = true;            //if it's melee
-            item.width = 62;              //Sword width
-            item.height = 72;             //Sword height
+            item.width = 55;              //Sword width
+            item.height = 55;             //Sword height
             item.useTime = 20;          //how fast 
             item.useAnimation = 20;     
             item.useStyle = 1;        //Style is how this item is used, 1 is the style of the sword

@@ -16,10 +16,12 @@ namespace Sierra
 		public bool PossessiveOne = false;
 		public bool FireWarrior = false;
 		public bool ZoneVolcano;
+		public bool ackFire = false;
 		public bool boom = false;
         public override void ResetEffects()
         {
             boom = false;
+			ackFire = false;
         }
 		public override void UpdateBiomes()
 		{
@@ -34,6 +36,18 @@ namespace Sierra
 			*/
 
 		}
+		 public override void UpdateBadLifeRegen()
+        {
+            if (ackFire)
+            {
+                if (player.lifeRegen > 0)
+                {
+                    player.lifeRegen = 0;
+                }
+                player.lifeRegenTime = 0;
+                player.lifeRegen -= 8;
+            }
+        }
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{
 			if (boom)

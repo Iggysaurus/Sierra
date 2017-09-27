@@ -82,8 +82,11 @@ namespace Sierra.NPCs.VolcanicCore
 			}
 			if (player.Center.Y > npc.Center.Y + 1000 || player.Center.Y < npc.Center.Y - 1000 || player.Center.X > npc.Center.X + 1000 || player.Center.X < npc.Center.X - 1000)
 			{
-				player.AddBuff(mod.BuffType("BadFire"), 60, true);
+				player.GetModPlayer<MyPlayer>(mod).ackFire = true;
 				//debuff with lots of fire if you leave arena, needs spriting
+			}
+			else{
+				player.GetModPlayer<MyPlayer>(mod).ackFire = false;
 			}
 			
 			//attacks

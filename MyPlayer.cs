@@ -45,7 +45,10 @@ namespace Sierra
                     player.lifeRegen = 0;
                 }
                 player.lifeRegenTime = 0;
-                player.lifeRegen -= 8;
+				if (!Main.expertMode)
+					player.Hurt(PlayerDeathReason.LegacyEmpty(), 10+(player.statDefense/2), 0);
+				else
+					player.Hurt(PlayerDeathReason.LegacyEmpty(), 10+(int)(player.statDefense*0.75), 0);
             }
         }
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)

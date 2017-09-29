@@ -18,7 +18,7 @@ namespace Sierra.Items.Weapons.Magic
     {
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("EvergreenStave");
+			DisplayName.SetDefault("Evergreen Stave");
 		}
 
 

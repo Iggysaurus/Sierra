@@ -13,10 +13,12 @@ namespace Sierra
 {
     public class MyPlayer : ModPlayer
     {
+		public int debuffTimer = 0;
 		public bool PossessiveOne = false;
 		public bool PossessiveTwo = false;
 		public bool FireWarrior = false;
 		public bool ZoneVolcano;
+		public bool ackFire = false;
 		public bool boom = false;
         public override void ResetEffects()
         {
@@ -34,6 +36,31 @@ namespace Sierra
 				player.ManageSpecialBiomeVisuals("Sierra:Volcano", false, player.Center);
 			*/
 
+		}
+		 public override void UpdateBadLifeRegen()
+        {
+            if (ackFire)
+            {
+                if (player.lifeRegen > 0)
+                {
+                    player.lifeRegen = 0;
+                }
+                player.lifeRegenTime = 0;
+				/*if (!Main.expertMode)
+					player.Hurt(PlayerDeathReason.LegacyEmpty(), 10+(player.statDefense/2), 0);
+				else
+					player.Hurt(PlayerDeathReason.LegacyEmpty(), 10+(int)(player.statDefense*0.75), 0);*/
+				
+            }
+        }
+		public override void PostUpdate()
+        {
+			debuffTimer++;
+			if (debuffTimer % 20 == 0 && ackFire)
+			{
+				CombatText.NewText(new Microsoft.Xna.Framework.Rectangle((int) player.position.X, (int) player.position.Y, player.width, player.height), Color.Red, "10", true, false);
+				player.statLife -= 10;
+			}
 		}
 		public override void Hurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
 		{

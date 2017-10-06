@@ -16,7 +16,7 @@ namespace Sierra.NPCs.VolcanicCore
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Volcanic Core");
-			Main.npcFrameCount[npc.type] = 1;
+			Main.npcFrameCount[npc.type] = 5;
 		}
         public override void SetDefaults()
         {
@@ -39,11 +39,17 @@ namespace Sierra.NPCs.VolcanicCore
             npc.netAlways = true;
         }
 
-        public override void FindFrame(int frameHeight)
+        /*public override void FindFrame(int frameHeight)
         {
             npc.frameCounter++;
+        }*/
+		public override void FindFrame(int frameHeight)
+        {
+            npc.frameCounter += 0.15f;
+            npc.frameCounter %= Main.npcFrameCount[npc.type];
+            int frame = (int)npc.frameCounter;
+            npc.frame.Y = frame * frameHeight;
         }
-
         public override void AI()
         {
 			//targeting

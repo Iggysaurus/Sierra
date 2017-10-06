@@ -15,6 +15,7 @@ namespace Sierra
     {
 		public int debuffTimer = 0;
 		public bool PossessiveOne = false;
+		public bool PossessiveTwo = false;
 		public bool FireWarrior = false;
 		public bool ZoneVolcano;
 		public bool ackFire = false;
@@ -88,6 +89,10 @@ namespace Sierra
 				player.meleeCrit += 2;
 			}
 			if (PossessiveOne)
+            {
+                player.statLifeMax2 += 40;
+			}
+			if (PossessiveTwo)
             {
                 player.statLifeMax2 += 40;
 			}

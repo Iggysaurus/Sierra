@@ -1,0 +1,26 @@
+Bug and the thing that i think it's wrong.
+1). Tar Bat animation is very weird.
+2). Volcanic chest is look weird.
+3). Enchanted Bow is too small.
+4). Runic Bow shooted his own projectiles same time as arrow that player used (even Wooden Arrow)
+5). True Runic Bow shooted only 1 colour projectile and another arrow was the arrow that player used (except Wooden Arrow)
+
+
+
+Question that I want to ask
+1). Slime Launcher didn't requested any ammo?
+2). Magmatic Hook suppose to be a speedy hook?
+3). Volcanic enemies drop nothing?
+4). Tar eneimes also spawn in Corrupt and crimson desert?
+
+
+
+The thing that I want to suggest
+1). Molten chunk shuld give player a fire buff when player step on it.
+2). Projectile or dust for Enchanted tools.
+3). Nerfed Magma Rapier.
+4). In my opinion, Tar Slicer should be "usestyle = 5" 
+5). Lizard Tail can be vanity as well by add a tail to player.
+6). Nerfed all currently monsters a bit tbh. 
+7). Add a grow light to Void Monolith.
+8). Magma Bat too speedy.
